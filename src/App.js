@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import StevePage from "./pages/StevePage"
+import ElonPage from "./pages/ElonPage"
+import JackPage from "./pages/JackPage"
+import ErrorPage from "./pages/ErrorPage"
+import MarkPage from "./pages/MarkPage"
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <Routes>
+        <Route path='/' element=<StevePage/> />
+        <Route path='/' element=<ElonPage/> />
+        <Route path='/' element=<JackPage/> />
+        <Route path='/' element=<MarkPage/> />
+        <Route path='/' element=<ErrorPage/> />
+      </Routes>
+    </Router>
+  )
 }
 
 export default App;
