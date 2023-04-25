@@ -1,8 +1,9 @@
 // import React from 'react'
 import { useState } from "react";
 import Card from "../components/card/Card"
+import Layout from "../components/layouts/Layout";
 
-export default function StevePage() {
+export default function StevePage({society, blog}) {
 
   const [show, setShow] = useState(false);
   const [count, setCount] = useState(0);
@@ -29,12 +30,16 @@ export default function StevePage() {
 
 
   return (
+    <Layout>
     <div className='px-24 py-20'>
+      <p>{blog}</p>
       <Card 
       url_img="steve.png"
+    
       name="Steve Jobs"
       content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui minima totam expedita dicta perferendis possimus, cum, omnis blanditiis perspiciatis iusto voluptatum soluta adipisci excepturi. Iusto assumenda blanditiis itaque iste suscipit?"
       />
+      <p>{society}</p>
       <div className="my-10">
         <p className="text-3xl font blakc text-blue-500 pb-6">Likes: {count}</p>
         {/* décrémenté -1 */}
@@ -56,6 +61,8 @@ export default function StevePage() {
         </div>
       </div>
     </div>
+    </Layout>
+    
     
   )
 }

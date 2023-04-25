@@ -8,25 +8,37 @@ import MarkPage from "./pages/MarkPage";
 import Navigation from './components/navbar/Navigation';
 import Footer from './components/footer/Footer';
 import Contact from './pages/Contact';
+import StagairePage from './pages/StagairePage';
+import BlogPage from './pages/BlogPage';
+import { useState } from 'react';
+import ShowPost from './pages/ShowPost';
+import Table from './components/table/Table';
+
 
 
 function App() {
+  const [society,setSociety] =useState("Apple");
+  const [blog,setBlog] =useState ("bienvenu sur le blog")
   // const [color, setColor] = useState('bg-blue-600');
   // color = "bg-blue-500";
   // const [color, setColor] = useSate("bg-blue-500");
   return (
     <Router>
       
-      <Navigation /*color={color} setColor={setColor}*//>
+      {/* <Navigation/> */}
       <Routes>
-        <Route path='/steve' element=<StevePage/> />
+        <Route path='/steve' element=<StevePage society={society} blog={blog}/> />
         <Route path='/elon' element=<ElonPage/> />
         <Route path='/jack' element=<JackPage/> />
         <Route path='/mark' element=<MarkPage/> />
         <Route path='/contact' element=<Contact/> />
+        <Route path='/stagiaire' element=<StagairePage/> />
+        <Route path='/blog' element=<BlogPage blog={blog}/> />
+        <Route path='/post/:id' element=<ShowPost/> />
+        <Route path='/table' element=<Table/> />
         <Route path='/*' element=<ErrorPage/> />
       </Routes>
-     <Footer /*color={color}*//>
+     {/* <Footer /> */}
     </Router>
   )
 }

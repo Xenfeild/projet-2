@@ -1,32 +1,42 @@
 export const dataNav = [
     {
       name: "steve",
-    url: '/',
+    url: '/steve',
     id:1,
     },
     {
       name: "elon",
-    url: '/',
+    url: '/elon',
     id:2,
     },
     {
       name: "bill",
-    url: '/',
+    url: '/bill',
     id:3,
     },
     {
       name: "jack",
-    url: '/',
+    url: '/jack',
     id:4,
     },
     {
       name: "mark",
-    url: '/',
+    url: '/mark',
     id:5,
     },
     {
       name: "contact",
-    url: '/',
-    id:1,
+    url: '/contact',
+    id:6,
+    },
+    {
+      name: "stagiaire",
+    url: '/stagiaire',
+    id:7,
+    },
+    {
+      name: "blog",
+    url: '/blog',
+    id:8,
     }
 ]

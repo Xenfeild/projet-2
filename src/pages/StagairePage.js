@@ -1,10 +1,10 @@
 import React from 'react'
 import Layout from '../components/layouts/Layout'
 
-export default function ErrorPage() {
+export default function StagairePage() {
   return (
     <Layout>
-    <div>Error 404</div>
+    <div>StagairePage</div>
     </Layout>
   )
 }

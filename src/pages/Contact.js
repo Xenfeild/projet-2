@@ -1,30 +1,48 @@
 import React, { useState } from 'react'
 import InputComponents from '../components/inputs/InputComponents'
+import Layout from '../components/layouts/Layout';
 
 export default function Contact() {
     const [inputs, setInputs] = useState([]);
-    console.log("inputs:", inputs)
+    const [message,setMessage] =useState("");
+    // setInputs([])
     
 
     const handleChange = (event) => {
-        console.log("event:", event.target.value);
+        // console.log("event:", event.target.value);
         // je cible mes values de mes inputs
         const value = event.target.value;
+        console.log(value)
         // je set toutes les valeurs et leur clé dans mon tableau inputs
         const name = event.target.name;
 
         setInputs((values) => ({...values, [name]: value}))
     };
+    // transfere mon state inputs en arrays
+    const inputsArray = Object.keys(inputs);
+    console.log(inputsArray)
+
 
     const handleSubmit = (event) => {
         // modifie la soumission du formulaire par défault
         event.preventDefault();
-        alert(inputs);
-    }
+        setMessage(
+            inputsArray.map((item) => <p key={item}>La key est : {item} voici sa valeur : {inputs[item]}</p>)
+        );
+        // insert to database
+    };
+    
     
   return (
+    <Layout>
     <div className='px-24 py-20'>
         <h1 className='font-bold text-3xl pb-8 text-center'>Nous contacter</h1>
+        {/* {message !=== "" && (
+        <p>Voici les datas envoyé</p>
+        <div className="bg-green-500">
+        {message}
+        </div>
+        )} */}
         <form className='flex item-center flex-col' onSubmit={handleSubmit}>
             {/* prenom + nom */}
             <div className="flex space-x-6 mt-5">
@@ -51,5 +69,6 @@ export default function Contact() {
             <input type="submit" value="envoyer" className='bg-blue-500 p-3 text-white rounded-lg mt-5 w-full'/>
         </form>
     </div>
+    </Layout>
   )
 }
