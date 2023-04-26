@@ -8,7 +8,6 @@ import MarkPage from "./pages/MarkPage";
 import Contact from './pages/Contact';
 import StagairePage from './pages/StagairePage';
 import BlogPage from './pages/BlogPage';
-import { useState } from 'react';
 import ShowPost from './pages/ShowPost';
 import ShowStagiaire from './pages/ShowStagiaire';
 
