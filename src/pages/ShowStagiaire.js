@@ -3,14 +3,13 @@ import Layout from '../components/layouts/Layout'
 import { useParams } from 'react-router-dom';
 
 
-export default function ShowPost() {
+export default function ShowStagiaire() {
   const {id} = useParams();
-  console.log('id:', id)
-  const [post, setPost]= useState([]);
+  const [data, setData]= useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const API_URL = `https://jsonplaceholder.typicode.com/posts/${id}`;
+  const API_URL = `https://jsonplaceholder.typicode.com/users/${id}`;
 
     useEffect(() =>{
       fetch(API_URL)
@@ -18,7 +17,7 @@ export default function ShowPost() {
       .then(resultat => {
         // console.log("resultat:", resultat)
         setIsLoading(true);
-        setPost(resultat); 
+        setData(resultat); 
       },
       // capture the error
       (error) => {
@@ -46,13 +45,23 @@ export default function ShowPost() {
 
   return (
     <Layout>
-        <div className='px-24 py-20 text-center flex justify-center flex-col'>
+      <div className="px-24 py-20 flex justify-center text-center">
+        <img src="https://image.noelshack.com/fichiers/2017/25/5/1498252867-ram5.png" alt="" />
+        <div className=''>
+          <h2 className='font-bold text-3xl text-blue-600 mb-10'>{data.name}</h2>
+          <p className='mb-2 text-xl'><span className='font-bold'>pseudo: </span>{data.username}</p>
+          <p className='mb-2 text-xl'><span className='font-bold'>email: </span>{data.email}</p>
+          <p className='mb-2 text-xl'><span className='font-bold'>téléphone: </span>{data.phone}</p>
+          <p className='mb-2 text-xl'><span className='font-bold'>site: </span>{data.website}</p>
+        </div>
+      </div>
+        {/* <div className='px-24 py-20 text-center flex justify-center flex-col'>
             <h1 className='font-bold text-center text-3xl text-indigo-600'>{post.title}</h1>
             <div className='w-1/2 p-10 flex -justify-center'>
             <img src={`https://img-9gag-fun.9cache.com/photo/anz4Q3q_460s.jpg`} alt='' />
             </div>
             <p className=''>{post.body}</p>
-        </div>
+        </div> */}
     </Layout>
   )
 }

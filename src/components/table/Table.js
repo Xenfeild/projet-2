@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Layout from '../layouts/Layout';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 export default function Table()  {
   const {id} = useParams();
@@ -46,34 +46,33 @@ export default function Table()  {
 
 
   return (
-<table class="table-auto space-x-7">
-  <thead>
-    <tr>
-      <th>id</th>
-      <th>Nom</th>
-      <th>Prenom</th>
-      <th>Email</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>{data.id}</td>
-      <td>{data.name}</td>
-      <td>{data.username}</td>
-      <td>{data.email}</td>
-    </tr>
-    {/* <tr>
-      <td>Witchy Woman</td>
-      <td>The Eagles</td>
-      <td>1972</td>
-    </tr>
-    <tr>
-      <td>Shining Star</td>
-      <td>Earth, Wind, and Fire</td>
-      <td>1975</td>
-    </tr> */}
-  </tbody>
-</table>
+
+    <div className="flex justify-center py-24 px-2 text-center text-2xl">
+      <table class="table-auto ">
+        <thead className='bg-blue-200'>
+          <tr>
+            <th className='w-1/4 p-5'>id</th>
+            <th className='w-1/4 p-5'>Nom</th>
+            <th className='w-1/4 p-5'>Email</th>
+            <th className='w-1/4 p-5'>Téléphone</th>
+            <th className='w-1/4 p-5'>Voir</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((item) => (
+          <tr key={item.id}>  
+            <td className='p-5'>{item.id}</td>
+            <td className='p-5'>{item.name}</td>
+            <td className='p-5'>{item.email}</td>
+            <td className='p-5'>{item.phone}</td> 
+            <Link to={`/user/${item.id}`}>        
+              <td className='p-5'>Voir</td>   
+            </Link>      
+          </tr>
+        ))}        
+      </tbody>
+    </table>
+  </div>
   )
 }
 }

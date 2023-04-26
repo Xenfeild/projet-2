@@ -12,7 +12,9 @@ import StagairePage from './pages/StagairePage';
 import BlogPage from './pages/BlogPage';
 import { useState } from 'react';
 import ShowPost from './pages/ShowPost';
-import Table from './components/table/Table';
+import ShowStagiaire from './pages/ShowStagiaire';
+
+
 
 
 
@@ -35,7 +37,7 @@ function App() {
         <Route path='/stagiaire' element=<StagairePage/> />
         <Route path='/blog' element=<BlogPage blog={blog}/> />
         <Route path='/post/:id' element=<ShowPost/> />
-        <Route path='/table' element=<Table/> />
+        <Route path='user/:id' element=<ShowStagiaire/> />
         <Route path='/*' element=<ErrorPage/> />
       </Routes>
      {/* <Footer /> */}
