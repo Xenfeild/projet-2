@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import CardBlog from '../components/card/CardBlog'
-import { dataBlog } from '../components/footer/data/dataBlog'
+// import { dataBlog } from '../components/footer/data/dataBlog'
 import Layout from '../components/layouts/Layout'
 
 export default function BlogPage({blog}) {
@@ -49,7 +49,7 @@ export default function BlogPage({blog}) {
     <Layout>
     <div className='px-24 py-20'>
         
-        <p className='text-center font-bold text-blue-600 text-4xl pb-6'>{blog}</p>
+        <p className='text-center font-bold text-blue-600 text-4xl pb-6'>Bienvenu sur le blog</p>
         <div className="flex flex-wrap space-x-7 ">
         {
             
