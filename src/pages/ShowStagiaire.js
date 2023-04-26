@@ -55,13 +55,6 @@ export default function ShowStagiaire() {
           <p className='mb-2 text-xl'><span className='font-bold'>site: </span>{data.website}</p>
         </div>
       </div>
-        {/* <div className='px-24 py-20 text-center flex justify-center flex-col'>
-            <h1 className='font-bold text-center text-3xl text-indigo-600'>{post.title}</h1>
-            <div className='w-1/2 p-10 flex -justify-center'>
-            <img src={`https://img-9gag-fun.9cache.com/photo/anz4Q3q_460s.jpg`} alt='' />
-            </div>
-            <p className=''>{post.body}</p>
-        </div> */}
     </Layout>
   )
 }

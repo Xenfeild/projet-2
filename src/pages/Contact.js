@@ -23,27 +23,21 @@ export default function Contact() {
     console.log(inputsArray)
 
 
-    const handleSubmit = (event) => {
-        // modifie la soumission du formulaire par défault
-        event.preventDefault();
-        setMessage(
-            inputsArray.map((item) => <p key={item}>La key est : {item} voici sa valeur : {inputs[item]}</p>)
-        );
-        // insert to database
-    };
+    // const handleSubmit = (event) => {
+    //     // modifie la soumission du formulaire par défault
+    //     event.preventDefault();
+    //     setMessage(
+    //         inputsArray.map((item) => <p key={item}>La key est : {item} voici sa valeur : {inputs[item]}</p>)
+    //     );
+    //     // insert to database
+    // };
     
     
   return (
     <Layout>
     <div className='px-24 py-20'>
         <h1 className='font-bold text-3xl pb-8 text-center'>Nous contacter</h1>
-        {/* {message !=== "" && (
-        <p>Voici les datas envoyé</p>
-        <div className="bg-green-500">
-        {message}
-        </div>
-        )} */}
-        <form className='flex item-center flex-col' onSubmit={handleSubmit}>
+        <form className='flex item-center flex-col' /*onSubmit={handleSubmit}*/>
             {/* prenom + nom */}
             <div className="flex space-x-6 mt-5">
                 <InputComponents  label="Prenom" name="fName" value={inputs.fName || ""} onChange={handleChange}/>
