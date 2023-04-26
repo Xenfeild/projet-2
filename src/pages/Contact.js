@@ -4,7 +4,7 @@ import Layout from '../components/layouts/Layout';
 
 export default function Contact() {
     const [inputs, setInputs] = useState([]);
-    const [message,setMessage] =useState("");
+    // const [message,setMessage] =useState("");
     // setInputs([])
     
 
